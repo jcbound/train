@@ -13,12 +13,22 @@ a{
     position: fixed;
     width: 100%;
     vertical-align:middle;
+    transition: all 0.3s;
+}
+.topnavbar.sticky{
+    
+    padding-top:10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    z-index:1;
 }
 .topnavbar-1{
     padding-left: 16px;
     padding-right:16px;
     
 }
+
 .clearfix:after{
     content: "";
     display: block;
@@ -44,23 +54,89 @@ a{
 .topnavbar nav{
     float: right;
 }
-nav ul li{
+[data-x].active{
+   outline:10px solid red;
+}
+nav>ul>li{
     float: left;
     list-style: none;
     margin-left: 17px;
     margin-right: 17px;
+    position:relative;
 }
-nav ul li a{
-    font-size: 12px;
+nav>ul>li>a{
+    font-size: 18px;
     color: #b7b7b7;
     font-weight: bold;
     padding-bottom: 5px;
     padding-top: 5px;
-    
-
+    position:relative;
 }
-nav ul li a:hover{
-    border-bottom: 3px solid #e06567;
+.sticky nav>ul>li>a{
+    color:#000;
+    
+}
+nav>ul>li.active>a::after,nav>ul>li.heightlight>a::after{
+    content:'';
+    position: absolute;
+    top:100%;
+    left: 0;
+    background-color: #E8676B;
+    height:4px;
+    width:100%;
+    animation: menuSlide 0.5s;
+}
+@keyframes menuSlide{
+    0%{
+        width:0;
+    }
+    100%{
+        width:100%;
+    }
+}
+[data-x].offset{
+    transform:translateY(100px);
+}
+[data-x]{
+    transform:translateY(0);
+    transition: all 0.5s;
+}
+[data-x].animate{
+    animation:slideUp 0.5s;
+}
+@keyframes slideUp{
+    0%{
+        transform:translateY(100px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+.topnavbar .submenu{
+    list-style: none;
+    position: absolute;
+    top:140%;
+    right:0;
+    background-color:#fff;
+    line-height: 2.5;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-right: 40px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    white-space: nowrap;
+    display: none;
+    animation:transpace 0.5s;
+}
+@keyframes transpace {
+    0%{
+        margin-right:100%;
+    }
+    100%{
+        margin-right:0%;
+    }
+}
+.topnavbar li.active .submenu{
+    display:block ;
 }
 .banner{
     background-image: url(../images/rs-cover-2-2-1-1.jpg);
@@ -232,11 +308,16 @@ dt{
     background-color: #ebd4d5;
     border-radius:2px;
 }
+section .sumskills.offset .progressbarS{
+    transform:translateX(-100%);
+}
 .progressbarS{
     width:80%;
     height:5px;
     background-color:#e8676b;
     border-radius:2px;
+    transform:translateX(0);
+    transition: all 1s;
 }
 .portfolio{
     margin-top:78px;
