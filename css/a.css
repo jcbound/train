@@ -243,7 +243,7 @@ dt{
 }
 .main-content{
     max-width:940px;
-    margin:0 auto;
+    margin:100px auto;
 }
 .downloadresume{
     max-width:940px;
@@ -387,6 +387,5 @@ section .sumskills.offset .progressbarS{
 }
 .loading{
     height:500px;
-    background-color: bisque;
 }
 

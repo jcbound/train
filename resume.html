@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/a.css">
     <script src="//at.alicdn.com/t/font_1049550_xomfnkw9lh.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>    
     <title>我的简历</title>
     <style>
     .loading-1{
@@ -59,7 +61,40 @@
     .site-welcome.active{
         display: flex;
 
+    }
+    .swiper-container {
+        margin-top:30px;
+        width: 800px;
+        height: 600px;
+    }
+    .swiper-slide{
+        background:white;
+    }
+    .swiper-button-prev{
+        left:-0px;
+    }
+    .swiper-button-next{
+        right: -0px;
+    }
+    .swiper-button-prev,.swiper-button-next{
+        background-color:rgba(255,255,255,0.7);
+        top:35%;
+        width: 64px;
+        height:64px;
+        border-radius: 50%;     
+    }
+    .comment{
+        
     } 
+    .comment h2{
+        margin-top:50px;
+        text-align:center;
+        margin-bottom:20px;
+    }
+    .comment>section{
+        text-align:center;
+        padding-bottom:60px;
+    }
     </style>
 </head>
 <body>
@@ -237,23 +272,61 @@
                             }
                             </script>
                 </div>
-                <div class="production clearfix">
-                    <div class="proleft">
-                        <img src="./images/production01.jpg" alt="">
-                    </div>
-                    <div class="proright">
-                        <div class="right01">
-                            <img src="./images/production02.jpg" alt="">
+                <div class="works">
+                    <div class="swiper-container">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <img  src="./images/keyboard.png" class="swiper-slide">
+                            <img  src="./images/paint.jpg" class="swiper-slide">
+                            <img  src="./images/web.jpg" class="swiper-slide">
+                            <img  src="./images/draw.jpg" class="swiper-slide">
                         </div>
-                        <div class="right02">
-                            <img src="./images/production03.jpg" alt="">
-                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+                    
+                        <!-- If we need navigation buttons -->
+                        
+                    
+                        <!-- If we need scrollbar -->
+                    </div> 
+                    <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    <div class="comment">
+                        <h2>留言</h2>
+                            <section>
+                                    <form id="postMessageForm">
+                                        <input type="text" name="content" value="111">
+                                        <input type="submit" value="提交">
+                                    </form>
+                                </section>
                     </div>
                 </div>
-                <div class="loading">loading……</div>
+
             </div>
+            
     </main>
     <script >
+        //轮播图
+        var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+    },
+  })
         ///loading 加载特效
         setTimeout(function(){
             siteWelcome.classList.remove("active")   
@@ -345,5 +418,7 @@ for(let i = 0;i<aTags.length;i++){
     }
 }
     </script>
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.13.0/dist/av-min.js"></script>
+    <script src="./js/message.js"></script>
 </body>
 </html>
