@@ -18,7 +18,7 @@ let myForm = document.querySelector("#postMessageForm")
 console.log(myForm)
 myForm.addEventListener("submit",function(e){
   e.preventDefault()
-  let content = myForm.querySelector("input[name=content]").Value
+  let content = myForm.querySelector("input[name=content]").value
   console.log(content)
   console.log("ceshi")
   var Message = AV.Object.extend("Message");
