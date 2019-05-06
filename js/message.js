@@ -5,14 +5,14 @@ AV.init({
   appId: APP_ID,
   appKey: APP_KEY
 });
-console.log("没有报错")
-var TestObject = AV.Object.extend('TestObject');
-var testObject = new TestObject();
-testObject.save({
-  content: 'Hello World!'
-}).then(function(object) {
-  alert('LeanCloud Rocks!');
-})
+// console.log("没有报错")
+// var TestObject = AV.Object.extend('TestObject');
+// var testObject = new TestObject();
+// testObject.save({
+//   content: 'Hello World!'
+// }).then(function(object) {
+//   alert('LeanCloud Rocks!');
+// })
 
 let myForm = document.querySelector("#postMessageForm")
 console.log(myForm)
@@ -20,6 +20,7 @@ myForm.addEventListener("submit",function(e){
   e.preventDefault()
   let content = myForm.querySelector("input[name=content]").Value
   console.log(content)
+  console.log("ceshi")
   var Message = AV.Object.extend("Message");
   var message = new Message();
   message.save({
