@@ -44,10 +44,7 @@ console.log(myForm)
 myForm.addEventListener("submit",function(e){
   e.preventDefault()
   let content = myForm.querySelector("input[name=content]").value
-<<<<<<< HEAD
   let name = myForm.querySelector("input[name=name]").value
-=======
->>>>>>> 26be18a156c4daa2a351472f6080b3baeef5ac50
   console.log(content)
 
   var Mssage = AV.Object.extend("Mssage")
@@ -69,10 +66,9 @@ myForm.addEventListener("submit",function(e){
       myForm.querySelector("input[name=name]").value = ""
     console.log(object)
   })
-<<<<<<< HEAD
 
 })
 //输出数据
-=======
+
 })
->>>>>>> 26be18a156c4daa2a351472f6080b3baeef5ac50
+
