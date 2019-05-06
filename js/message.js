@@ -1,4 +1,4 @@
-var APP_ID = 'PU0zonMvfQVk2l5XmejPIlc0-gzGzoHsz';
+﻿var APP_ID = 'PU0zonMvfQVk2l5XmejPIlc0-gzGzoHsz';
 var APP_KEY = '88T9LHdaDTKDW6cdbEGNgu6e';
 
 AV.init({
@@ -13,7 +13,9 @@ AV.init({
 // }).then(function(object) {
 //   alert('LeanCloud Rocks!');
 // })
+
 //输出数据
+
 var query = new AV.Query('Mssage');
   query.find()
   .then(function (mssages) {
@@ -39,6 +41,7 @@ var query = new AV.Query('Mssage');
   
 
 //存入数据
+
 let myForm = document.querySelector("#postMessageForm")
 console.log(myForm)
 myForm.addEventListener("submit",function(e){
@@ -69,3 +72,6 @@ myForm.addEventListener("submit",function(e){
 
 })
 //输出数据
+
+
+
