@@ -29,9 +29,9 @@ function writeCss(prefix, code, fn){
   
   var css1 = `/* 
    * 面试官你好，我是XXX
-   * 只用文字作做我介绍太单调了
+   * 只用文字做自我介绍太单调了
    * 我就用代码来介绍吧
-   * 首先准备一些样式
+   * 首先展示一些样式
    */
   
   *{
@@ -86,9 +86,9 @@ function writeCss(prefix, code, fn){
   # 自我介绍
   
   我叫 XXX
-  1990 年 1 月出生
+  1994 年 2 月出生
   XXX 学校毕业
-  自学前端半年
+  前端三年经验
   希望应聘前端开发岗位
   
   # 技能介绍
@@ -100,6 +100,7 @@ function writeCss(prefix, code, fn){
   1. XXX 轮播
   2. XXX 简历
   3. XXX 画板
+  4. xxx小程序
   
   # 联系方式
   
